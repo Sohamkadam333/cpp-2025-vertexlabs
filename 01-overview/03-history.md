@@ -1,4 +1,4 @@
-# Histroy
+# History
 
 C++ is an object-oriented programming language developed by Bjarne Stroustrup at Bell Labs in the late 1970s. Initially called "C with Classes," it was designed to enhance the C language by adding features like active type checking, inheritance, and classes. The name was changed to C++ in 1983, symbolizing an increment over C.
 
