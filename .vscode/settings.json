@@ -4,6 +4,7 @@
 		"climits": "cpp",
 		"cfloat": "cpp",
 		"ostream": "cpp",
-		"iostream": "cpp"
+		"iostream": "cpp",
+		"iosfwd": "cpp"
 	}
 }
