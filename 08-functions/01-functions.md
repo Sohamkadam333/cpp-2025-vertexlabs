@@ -44,6 +44,6 @@ int main()
 ### 1. User Defined Function
 #### User-defined functions are user/customer-defined blocks of code specially customized to reduce the complexity of big programs. They are also commonly known as “tailor-made functions” which are built only to satisfy the condition in which the user is facing issues meanwhile reducing the complexity of the whole program.
 
-### 2. Library Function 
+### 2.Library Function 
 #### Library functions are also called “built-in Functions“. These functions are part of a compiler package that is already defined and consists of a special function with special and different meanings. Built-in Function gives us an edge as we can directly use them without defining them whereas in the user-defined function we have to declare and define a function before using them. 
 For Example: sqrt(), setw(), strcat(), etc.
