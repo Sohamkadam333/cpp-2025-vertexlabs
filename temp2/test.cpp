@@ -1,36 +1,33 @@
-#include <iostream>
+// 1. Destructor.
 
-using std::cin;
-using std::cout;
-using std::endl;
+#include <iostream>
+using namespace std;
 
 class Demo
 {
-private:
+public:
   int a;
 
-public:
-  int b;
-
-  int getA()
+  Demo()
   {
-    return a;
+    cout << "In Default Constructor" << endl;
   }
 
-  void setA(int ua)
+  ~Demo()
   {
-    a = ua;
+    cout << "In Destructor" << endl;
   }
 };
 
-int main()
+int main(void)
 {
-  Demo obj;
+  Demo obj1;
 
-  // obj.a = 10;
+  {
+    Demo obj2;
+  }
 
-  obj.b = 10;
-  cout << "obj b = " << obj.b;
+  Demo obj3;
 
   return 0;
 }
