@@ -8,15 +8,15 @@ using namespace std;
 
 class Demo {
 public:
-    int val;
-    
+    int val; // data member
+
     // Parameterized constructor
     Demo(int x) {
         val = x;
     }
     
     // Copy constructor
-    Demo(Demo& refObj) {
+    Demo(Demo &refObj) {
         val = refObj.val;
     }
 };
@@ -25,7 +25,7 @@ int main() {
     Demo obj1(10);
     
     // Creating another object from obj1
-    Demo obj2(a1);
+    Demo obj2(obj1);
     
       cout << obj2.val;
     return 0;
@@ -41,12 +41,12 @@ In general, creating a copy of an object means to create an exact replica of the
 
 
 ```cpp
-Geeks Obj1(Obj); // Copy Constructor
+Demo Obj1(Obj); // Copy Constructor
 or
-Geeks Obj1 = Obj; // Copy Constructor
+Demo Obj1 = Obj; // Copy Constructor
 
 // Default assignment operator
-Geeks Obj2;  // Default Constructor
+Demo Obj2;  // Default Constructor
 Obj2 = Obj1;
 ```
 
@@ -183,8 +183,8 @@ int main()
     // at the time of initialization
     // then copy is made through
     // COPY CONSTRUCTOR
-    Demo obj2 = obj1;
-    // Demo obj2(obj1);
+    // Demo obj2 = obj1;
+    Demo obj2(obj1);
 
     obj2.show_data();
     return 0;
