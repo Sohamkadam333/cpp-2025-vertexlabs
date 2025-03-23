@@ -1,33 +1,36 @@
-// 1. Destructor.
-
-#include <iostream>
+// C++ program to illustrate new, delete
+// malloc() and free()
+#include "bits/stdc++.h"
 using namespace std;
 
-class Demo
+// Class A
+class A
 {
-public:
   int a;
 
-  Demo()
+public:
+  int *ptr;
+
+  // Constructor of class A
+  A()
   {
-    cout << "In Default Constructor" << endl;
+    cout << "Constructor was Called!"
+         << endl;
   }
 
-  ~Demo()
+  // Destructor of class A
+  ~A()
   {
-    cout << "In Destructor" << endl;
+    cout << "Destructor was Called!"
+         << endl;
   }
 };
 
-int main(void)
+// Driver Code
+int main()
 {
-  Demo obj1;
 
-  {
-    Demo obj2;
-  }
-
-  Demo obj3;
-
-  return 0;
+  // Object Created of class A
+  A a;
+  exit(0);
 }
