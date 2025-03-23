@@ -44,8 +44,10 @@ int main() {
     
     Person p1("Shubham", 503);
     
-    if (!p1.validateID()) 
-        cout << "Invalid SocialID";
+    if (p1.validateID()) 
+        cout << "Valid SocialID";
+    else
+      cout <<"Invalid SocialID"
     
     cout << p1.getName();
     return 0;

@@ -83,7 +83,7 @@ int main()
 
 ```cpp
 // Reference to the calling object can be returned
-Test& Test::func () {
+Test& func () {
     // Some processing
     return *this;
 } 
@@ -101,15 +101,33 @@ private:
   int x;
   int y;
 public:
-  Test(int x = 0, int y = 0) { this->x = x; this->y = y; }
-  Test &setX(int a) { x = a; return *this; }
-  Test &setY(int b) { y = b; return *this; }
-  void print() { cout << "x = " << x << " y = " << y << endl; }
+  Test(int x = 0, int y = 0) 
+  { 
+    this->x = x; 
+    this->y = y; 
+    }
+
+  Test &setX(int a) 
+  { 
+    x = a; 
+    return *this; 
+    }
+
+  Test &setY(int b) 
+  { 
+    y = b; 
+    return *this; 
+    }
+
+  void print() 
+  { 
+    cout << "x = " << x << " y = " << y << endl; 
+    }
 };
 
 int main()
 {
-  Test obj1(5, 5);
+  Test obj1(5, 6);
 
   // Chained function calls.  All calls modify the same object
   // as the same object is returned by reference
@@ -120,3 +138,28 @@ int main()
 }
 
 ```
+
+/*
+OOP
+Demo obj;
+obj.add(10,20);
+
+Demo(int param1, int param2)
+{
+    a = param1;
+    b = param2;
+}
+-------------------------------
+
+Procedural Style
+Demo obj;
+add(&obj,10,20);
+
+
+Demo(const Demo *this, int param1, int param2)
+{
+    this->a = param1;
+    this->b = param2;
+}
+*/
+
