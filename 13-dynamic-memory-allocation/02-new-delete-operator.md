@@ -17,6 +17,7 @@ The new operator denotes a request for memory allocation on the Free Store. If s
 
 ```cpp
 pointer-variable = new data-type;
+int *ptr = new int;
 ```
 
 Here, the pointer variable is the pointer of type data-type. Data type could be any built-in data type including array or any user-defined data type including structure and class. 
@@ -27,11 +28,14 @@ Here, the pointer variable is the pointer of type data-type. Data type could be 
 int *p = NULL; 
 p = new int;   
 
+
+
             OR
 
 // Combine declaration of pointer 
 // and their assignment
-int *p = new int;
+int *p = new int; // c++
+int *p2 = (int *)malloc(sizeof(int)); // c
 ```
 
 
@@ -85,7 +89,7 @@ If enough memory is not available in the heap to allocate, the new request indic
 
 ```cpp
 int *p = new(nothrow) int;
-if (!p)
+if (!p) // if(p != NULL)
 {
    cout << "Memory allocation failed\n";
 }

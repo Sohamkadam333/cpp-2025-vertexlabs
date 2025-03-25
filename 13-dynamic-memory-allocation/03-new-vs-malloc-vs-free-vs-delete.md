@@ -47,7 +47,10 @@ int main()
  
     // Create an object of class A
     // using new operator
-    A* a = new A;
+
+    // int *ptr = new (nothrow) int;
+
+    A* a = new (nothrow) A;
     cout << "Object of class A was "
          << "created using new operator!"
          << endl;

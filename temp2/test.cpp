@@ -1,36 +1,50 @@
-// C++ program to illustrate new, delete
-// malloc() and free()
-#include "bits/stdc++.h"
+// new
+#include <iostream>
 using namespace std;
 
-// Class A
-class A
+int main(void)
 {
-  int a;
-
-public:
-  int *ptr;
-
-  // Constructor of class A
-  A()
+  int *ptr1 = new (nothrow) int[99999999]; // 4 * 99999999 bytes.
+  if (ptr1 != NULL)
   {
-    cout << "Constructor was Called!"
-         << endl;
+    cout << "ptr1 address = " << ptr1 << endl;
+  }
+  else
+  {
+    cout << "Memory allocation failed ptr1" << endl;
   }
 
-  // Destructor of class A
-  ~A()
+  int *ptr2 = new (nothrow) int[99999999]; // 4 * 99999999 bytes.
+  if (ptr2 != NULL)
   {
-    cout << "Destructor was Called!"
-         << endl;
+    cout << "ptr2 address = " << ptr2 << endl;
   }
-};
+  else
+  {
+    cout << "Memory allocation failed ptr2" << endl;
+  }
 
-// Driver Code
-int main()
-{
+  int *ptr3 = new (nothrow) int[99999999]; // 4 * 99999999 bytes.
+  if (ptr3 != NULL)
+  {
+    cout << "ptr3 address = " << ptr3 << endl;
+  }
+  else
+  {
+    cout << "Memory allocation failed ptr3" << endl;
+  }
 
-  // Object Created of class A
-  A a;
-  exit(0);
+  int *ptr4 = new (nothrow) int[99999999]; // 4 * 99999999 bytes.
+  if (ptr4 != NULL)
+  {
+    cout << "ptr4 address = " << ptr4 << endl;
+  }
+
+  int *ptr5 = new (nothrow) int[99999999]; // 4 * 99999999 bytes.
+  if (ptr5 != NULL)
+  {
+    cout << "ptr5 address = " << ptr5 << endl;
+  }
+
+  return 0;
 }
