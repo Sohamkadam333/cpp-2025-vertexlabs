@@ -106,7 +106,7 @@ int main() {
     Demo obj1(10);
     
     // Creating another object from obj1
-    Demo obj2(a1);
+    Demo obj2(obj1);
     
       cout << obj2.val;
     return 0;
