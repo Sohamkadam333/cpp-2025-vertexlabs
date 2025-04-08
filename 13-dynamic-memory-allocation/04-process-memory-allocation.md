@@ -23,8 +23,8 @@ The above variables a and b will be stored in the Initialized Data Segment.
 Uninitialized data segment often called the “bss” segment, named after an ancient assembler operator, that stood for “Block Started by Symbol” contains global and static variables that are not initialized by the programmer. These variables are automatically initialized to zero at runtime by the operating system. For example, the below shown variables will be stored in this segment:
 
 ```txt
-int a;
-static int b;
+    int a;
+    static int b;
 ```
 
 ## 3. Heap Segment
@@ -37,7 +37,8 @@ int *ptr = (int*) malloc(sizeof(int) * 10);
 ```
 
 ## 4. Stack Segment
-- The stack is a region of memory used for local variables and function call management. - Each time a function is called, a stack frame is created to store local variables, function parameters, and return addresses. This stack frame is stored in this segment.
+- The stack is a region of memory used for local variables and function call management. 
+- Each time a function is called, a stack frame is created to store local variables, function parameters, and return addresses. This stack frame is stored in this segment.
 
 - The stack segment is generally located in the higher addresses of the memory and grows opposite to heap. 
 - They adjoin each other so when stack and heap pointer meet, free memory of the program is said to be exhausted.

@@ -36,7 +36,7 @@ A default constructor is a constructor that doesn’t take any argument. It has 
 #include <iostream>
 using namespace std;
 
-// Class with no explicity defined constructors
+// Class with no explicit defined constructors
 class Demo {
 public:
 };
