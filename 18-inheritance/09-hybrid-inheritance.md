@@ -1,0 +1,3 @@
+# Hybrid Inheritance
+
+Hybrid inheritance is a complex form of inheritance in object-oriented programming (OOP). In Hybrid Inheritance, multiple types of inheritance are combined within a single class hierarchy, enabling a varied and flexible structure of classes. In hybrid inheritance, within the same class, we can have elements of single inheritance, multiple inheritance, multilevel inheritance, and hierarchical inheritance.
