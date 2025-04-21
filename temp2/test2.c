@@ -1,15 +1,17 @@
 #include <stdio.h>
 
-void printVal()
+void Hello()
 {
+  printf("Hello1");
+}
+
+void Hello(int x)
+{
+  printf("Hello2");
 }
 
 int main()
 {
-  printVal();
-  printVal();
-  printVal();
-  printVal();
-  printVal();
+  Hello();
   return 0;
 }

@@ -94,3 +94,212 @@ Exact type match.
 - Standard conversions (e.g., int to double).
 - User-defined conversions (via constructors/operators).
 - Ambiguity: A compile-time error occurs if multiple overloads are equally viable (e.g., func(5) with overloads func(int) and func(double) if no exact match exists).
+
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// TEST
+/*
+int Addition(int no1, int no2)
+{
+  return no1 + no2;
+}
+
+float FloatAdd(float no1, float no2)
+{
+  return no1 + no2;
+}
+*/
+
+// FUNCTION Overloading
+
+int Addition(int no1, int no2)
+{
+  return no1 + no2;
+}
+
+float Addition(float no1, float no2)
+{
+  return no1 + no2;
+}
+
+int main()
+{
+  int result1 = Addition(10, 20);
+  cout << "Result = " << result1 << endl;
+
+  float result2 = Addition(10.5f, 20.7f);
+  cout << "Result = " << result2 << endl;
+
+  return 0;
+}
+```
+
+
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// Name Mangling
+int Addition(int no1, int no2)
+{
+  return no1 + no2;
+}
+
+float Addition(float no1, float no2)
+{
+  return no1 + no2;
+}
+
+int main()
+{
+  cout << Addition(10, 20) << endl;       // 30
+  // cout << Addition(10.4, 20.2) << endl; // Error
+  cout << Addition(10.4f, 20.2f) << endl; // 30.6
+
+  return 0;
+}
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// Name Mangling
+int Addition(int no1, int no2)
+{
+  return no1 + no2;
+}
+
+float Addition(int no1, int no2)
+{
+  return no1 + no2;
+}
+
+int main()
+{
+  cout << Addition(10, 20) << endl; // 30
+  cout << Addition(10, 20) << endl; // 30 //30.2
+
+  return 0;
+}
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Demo
+{
+public:
+  // 1 can not overload
+  Demo()
+  {
+    cout << "In Default Constructor" << endl;
+  }
+
+  // 2 can be overload
+  Demo(int a)
+  {
+    cout << "In Parameterized Constructor 1 param" << endl;
+  }
+
+  Demo(int a, int b)
+  {
+    cout << "In Parameterized Constructor 2 param" << endl;
+  }
+
+  // 3 can be overload
+  Demo(Demo &refObj)
+  {
+    cout << "In Copy Constructor 1" << endl;
+  }
+
+  Demo(Demo &refObj, int a)
+  {
+    cout << "In Copy Constructor 2" << endl;
+  }
+
+  // 4 can be overload
+  void Display(int a)
+  {
+    cout << "In Display 1 param" << endl;
+  }
+
+  void Display(int a, int b)
+  {
+    cout << "In Display 2 param" << endl;
+  }
+
+  // can not overload
+  ~Demo()
+  {
+    cout << "In Destructor" << endl;
+  }
+};
+
+int main()
+{
+  Demo obj1;           // Default
+  Demo obj2(10);       // 1 param constr
+  Demo obj3(10, 20);   // 2 param constr
+  Demo obj4(obj3);     // copy constr
+  Demo obj5(obj4, 10); // overloaded copy constr
+
+  obj1.Display(10);     // display1
+  obj1.Display(10, 20); // display2
+
+  return 0;
+}
+```
+
+
+```cpp
+// Deafult Arguments
+#include <iostream>
+using namespace std;
+
+int Add(int no1 = 0, int no2 = 0)
+{
+  return no1 + no2;
+}
+
+int main()
+{
+  cout << Add() << endl;       // 0
+  cout << Add(10) << endl;     // 10
+  cout << Add(10, 20) << endl; // 30
+  return 0;
+}
+```
+
+
+```cpp
+// Deafult Arguments with Function Overloading
+#include <iostream>
+using namespace std;
+
+int Add(int no1 = 0, int no2 = 0)
+{
+  cout << "In Add 2 param" << endl;
+  return no1 + no2;
+}
+
+int Add()
+{
+  cout << "In Add 0 param" << endl;
+  return 0;
+}
+
+int main()
+{
+  // Add();       // in add 2 param
+  Add(10);     // "In Add 2 param" << endl; 10
+  Add(10, 20); // "In Add 2 param" << endl; 30
+
+  return 0;
+}
+```
