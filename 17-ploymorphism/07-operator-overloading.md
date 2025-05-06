@@ -205,3 +205,54 @@ int main(void)
   return 0;
 }
 ```
+
+
+```cpp
+// Unary Operator Overload
+// ++
+
+#include <iostream>
+using namespace std;
+
+class Demo
+{
+public:
+  int no;
+
+  Demo()
+  {
+    cout << "In Default constructor" << endl;
+    no = 0;
+    cout << "Out Default constructor" << endl;
+  }
+
+  void operator++()
+  {
+    cout << "In ++ overloadded operator" << endl;
+    no = no + 10;
+    cout << "Out ++ overloadded operator" << endl;
+  }
+};
+
+int main()
+{
+  cout << "In main" << endl;
+  int a = 1;
+  cout << "a = " << a << endl; // 10
+  a++;
+  cout << "a = " << a << endl; // 11
+
+  Demo d;
+
+  cout << "d no = " << d.no << endl; // 0
+
+  ++d;
+  cout << "d no = " << d.no << endl; // 1
+
+  ++d;
+  cout << "d no = " << d.no << endl; // 2
+
+  cout << "Out main" << endl;
+  return 0;
+}
+```
